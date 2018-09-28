@@ -7,7 +7,7 @@ public class McdonaldVerse
 {
     [Fact]
     public void VerseShouldExistAndBeOfTypeIVerse()
-    {
+    {        
         // act
         var verse = new Singer();        
         // assert
@@ -38,10 +38,10 @@ Here a moo, there a moo
 Everywhere a moo moo
 Old MacDonald had a farm E-I-E-I-O";
         // act 
-        var sing = verse.Sing();
-        Console.WriteLine(sing);
+        var songActual = verse.Sing();
+        
         // assert
-        Assert.True(sing.Equals(expectedVerse), "Expecting a cow-moo verse when no animal passed in");
+        Assert.Same(expectedVerse, songActual);
     }
 
 
