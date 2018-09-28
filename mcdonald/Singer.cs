@@ -27,7 +27,7 @@ namespace mcdonald
 
 
         private Func<Animal, string> VerseDefault =
-         (animal) => $@"Old MACDONALD had a farm E-I-E-I-O
+            (animal) => $@"Old MACDONALD had a farm E-I-E-I-O
 And on his farm he had a {animal.Name} E-I-E-I-O
 With a {animal.Sound} {animal.Sound} here
 And a {animal.Sound} {animal.Sound} there
