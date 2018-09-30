@@ -4,7 +4,7 @@ using mcdonald;
 using System.Linq;
 using System.Collections.Generic;
 
-public class McdonaldVerse
+public class SingerTests
 {
     [Fact]
     public void VerseShouldExistAndBeOfTypeIVerse()
