@@ -6,9 +6,6 @@ namespace mcdonald
 {
     public interface ISinger
     {
-        string Sing();
-
-        string Sing(IEnumerable<Animal> enumerable);
-
+        string Sing(IEnumerable<IAnimal> enumerable);
     }
 }

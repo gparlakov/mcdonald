@@ -7,32 +7,30 @@ namespace mcdonald
 {
     public class Singer : ISinger
     {
-        private Func<Animal, string> verseFunc;
+        private Func<IAnimal, string> verseFunc;
 
 
-        public Singer(Func<Animal, string> verseFunc = default(Func<Animal, string>))
+        public Singer(Func<IAnimal, string> verseFunc = default(Func<IAnimal, string>))
         {
             this.verseFunc = verseFunc ?? VerseDefault;
         }
 
-        public string Sing(IEnumerable<Animal> enumerable)
+        public string Sing(IEnumerable<IAnimal> animals)
         {
-            return string.Empty;
+            var verses = animals.Select(verseFunc).ToArray();
+
+            return string.Join("", verses);
         }
 
-        public string Sing()
-        {
-            return verseFunc(new Animal("cow", "moo"));
-        }
-
-
-        private Func<Animal, string> VerseDefault =
+        private Func<IAnimal, string> VerseDefault =
             (animal) => $@"Old MACDONALD had a farm E-I-E-I-O
 And on his farm he had a {animal.Name} E-I-E-I-O
 With a {animal.Sound} {animal.Sound} here
 And a {animal.Sound} {animal.Sound} there
 Here a {animal.Sound}, there a {animal.Sound}
 Everywhere a {animal.Sound} {animal.Sound}
-Old MacDonald had a farm E-I-E-I-O";
+Old MacDonald had a farm E-I-E-I-O
+
+";
     }
 }

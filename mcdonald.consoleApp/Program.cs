@@ -9,7 +9,7 @@ namespace mcdonald.consoleApp
 
         static void Main(string[] args)
         {
-            var animals = new Animal[] {
+            var animals = new IAnimal[] {
                 new Animal("Dog", "bark"),
                 new Animal("Cat", "meaw"),
                 new Animal("Cow", "moo"),
@@ -17,8 +17,6 @@ namespace mcdonald.consoleApp
             var verse = singer.Sing(animals);
 
             Console.WriteLine(verse);
-
-            Console.WriteLine(singer.Sing());
         }
     }
 }
