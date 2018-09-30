@@ -3,11 +3,11 @@ using mcdonald;
 
 namespace mcdonald.consoleApp
 {
-    class Program
+    public class Program
     {
         private static ISinger singer = new Singer();
 
-        static void Main(string[] args)
+        public static void Main(params string[] args)
         {
             var animals = new IAnimal[] {
                 new Animal("cow", "moo"),
