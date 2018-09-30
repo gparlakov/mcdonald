@@ -57,7 +57,55 @@ public class McdonaldVerse
         Assert.StrictEqual(expectedVerse, verse);
     }
 
-    //[Fact]
+        [Fact]
+    public void SingerShouldAcceptVerse_AndAnimalsCollection_AndUseThemToSing()
+    {
+        // arrange
+        var expectedVerse = "cat-meow\ndog-bark\n";
+        var singer = new Singer(a => $"{a.Name}-{a.Sound}\n");
+        var animals = new IAnimal[] { new Animal("cat", "meow"), new Animal("dog", "bark")};
+        // act
+        var verse = singer.Sing(animals);
+        // assert
+        Assert.StrictEqual(expectedVerse, verse);
+    }
+
+    [Fact]
+    public void Singer_WithDefaultVerse_AndTwoAnimals_ShouldSingTheTwoAnimalVerse()
+    {
+        // arrange
+        var verse = new Singer();
+        var expectedVerse = @"Old MACDONALD had a farm E-I-E-I-O
+And on his farm he had a cow E-I-E-I-O
+With a moo moo here
+And a moo moo there
+Here a moo, there a moo
+Everywhere a moo moo
+Old MacDonald had a farm E-I-E-I-O
+
+Old MACDONALD had a farm E-I-E-I-O
+And on his farm he had a cat E-I-E-I-O
+With a meow meow here
+And a meow meow there
+Here a meow, there a meow
+Everywhere a meow meow
+Old MacDonald had a farm E-I-E-I-O
+
+";
+
+        IEnumerable<IAnimal> animals = new IAnimal[] {
+            new Animal("cow", "moo"),
+            new Animal("cat", "meow"),
+        };
+        // act
+        var songActual = verse.Sing(animals);
+
+        // assert
+        Assert.StrictEqual(expectedVerse, songActual);
+    }
+
+
+    [Fact]
     public void Singer_WithDefaultVerse_AndFiveAnimals_ShouldSingTheFiveAnimalVerse()
     {
         // arrange
@@ -106,7 +154,7 @@ Old MacDonald had a farm E-I-E-I-O
 
         IEnumerable<IAnimal> animals = new IAnimal[] {
             new Animal("cow", "moo"),
-            new Animal("cat", "meaw"),
+            new Animal("cat", "meow"),
             new Animal("dog", "bark"),
             new Animal("pig", "oink"),
             new Animal("horse", "neigh"),
