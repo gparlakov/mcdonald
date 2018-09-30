@@ -9,8 +9,6 @@ namespace mcdonald.consoleApp
 
         static void Main(string[] args)
         {
-
-
             var animals = new IAnimal[] {
                 new Animal("cow", "moo"),
                 new Animal("cat", "meow"),
