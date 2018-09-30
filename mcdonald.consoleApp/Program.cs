@@ -9,16 +9,23 @@ namespace mcdonald.consoleApp
 
         public static void Main(params string[] args)
         {
-            var animals = new IAnimal[] {
-                new Animal("cow", "moo"),
-                new Animal("cat", "meow"),
-                new Animal("dog", "bark"),
-                new Animal("horse", "neigh"),
-                new Animal("some chicken", "cluck"),
-            };
-            var verse = singer.Sing(animals);
+            System.Console.WriteLine(@"Choose:
+1 - Default verse
+2 - User defined animals verse
+Any other key - exit");
+            var key = Console.Read();
 
-            Console.WriteLine(verse);
+
+            // var animals = new IAnimal[] {
+            //     new Animal("cow", "moo"),
+            //     new Animal("cat", "meow"),
+            //     new Animal("dog", "bark"),
+            //     new Animal("horse", "neigh"),
+            //     new Animal("some chicken", "cluck"),
+            // };
+            // var verse = singer.Sing(animals);
+
+            // Console.WriteLine(verse);
         }
     }
 }

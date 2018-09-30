@@ -7,14 +7,56 @@ using mcdonald;
 public class ConsoleTests
 {
     private readonly TestWriter testWriter;
+    private readonly TestReader testReader;
 
     public ConsoleTests()
     {
         testWriter = new TestWriter();
+        testReader = new TestReader();
         Console.SetOut(testWriter);
+        Console.SetIn(testReader);
     }
 
+    //[Fact]
+    public void ShouldPromptForUserInput()
+    {
+        // arrange
+        var expected = string.Join("\n",
+            new string[] {"Choose:",
+                "1 - Default verse",
+                "2 - User defined animals verse",
+                "Any other key - exit"})
+            + Environment.NewLine;
+        // act
+        mcdonald.consoleApp.Program.Main();
+        // Console.Write("1");
+        // assert
+        Assert.Equal(expected, testWriter.Result());
+    }
+
+    private string standartUserPrompt = string.Join("\n",
+            new string[] {"Choose:",
+                "1 - Default verse",
+                "2 - User defined animals verse",
+                "Any other key - exit",
+                });
+
     [Fact]
+    public void ShouldAcceptUserInput()
+    {
+        // arrange
+        var expected = string.Join(Environment.NewLine, new string[] {
+           standartUserPrompt,
+            "1"});
+
+        // act
+        mcdonald.consoleApp.Program.Main();
+        System.Console.Write("1");
+        // assert
+        Assert.Equal(expected, testWriter.Result());
+    }
+
+    [Fact(Skip = "true")]
     public void DefaultCaseTest()
     {
         // act
@@ -24,7 +66,7 @@ public class ConsoleTests
         Assert.True(testWriter.Result().Length > 0, "Expecting to have some output from the default case into the test writer");
     }
 
-    [Fact]
+    [Fact(Skip = "true")]
     public void RunAppWithoutParameters_ExpectDefaultMcdonaldVerse()
     {
         // arrange
@@ -74,6 +116,39 @@ public class ConsoleTests
         mcdonald.consoleApp.Program.Main();
         // assert
         Assert.Equal(expected, testWriter.Result());
+    }
+}
+
+public class TestReader : TextReader, IDisposable
+{
+    private MemoryStream stream;
+    private StreamReader reader;
+
+    public TestReader()
+    {
+        stream = new MemoryStream();
+        reader = new StreamReader(stream);
+    }
+
+    public void InputKey(char key)
+    {
+        this.stream.Write(new byte[] { (byte)key }, 0, 1);
+    }
+
+    public new void Dispose()
+    {
+        if (reader != null)
+        {
+            reader.Dispose();
+            reader = null;
+
+            if (stream != null)
+            {
+                stream.Dispose();
+                stream = null;
+            }
+        }
+        this.Dispose();
     }
 }
 
