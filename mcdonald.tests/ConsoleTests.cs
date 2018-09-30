@@ -71,7 +71,7 @@ Old MacDonald had a farm E-I-E-I-O
         // act
         mcdonald.consoleApp.Program.Main();
         // assert
-        Assert.Equal<string>(expected, testWriter.Result());
+        Assert.Equal(expected, testWriter.Result());
     }
 }
 

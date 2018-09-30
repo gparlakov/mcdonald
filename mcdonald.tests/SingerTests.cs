@@ -54,7 +54,7 @@ public class SingerTests
         // act
         var verse = singer.Sing(animals);
         // assert
-        Assert.StrictEqual(expectedVerse, verse);
+        Assert.Equal(expectedVerse, verse);
     }
 
         [Fact]
@@ -67,7 +67,7 @@ public class SingerTests
         // act
         var verse = singer.Sing(animals);
         // assert
-        Assert.StrictEqual(expectedVerse, verse);
+        Assert.Equal(expectedVerse, verse);
     }
 
     [Fact]
@@ -101,7 +101,7 @@ Old MacDonald had a farm E-I-E-I-O
         var songActual = verse.Sing(animals);
 
         // assert
-        Assert.StrictEqual(expectedVerse, songActual);
+        Assert.Equal(expectedVerse, songActual);
     }
 
 
@@ -163,7 +163,7 @@ Old MacDonald had a farm E-I-E-I-O
         var songActual = verse.Sing(animals);
 
         // assert
-        Assert.StrictEqual(expectedVerse, songActual);
+        Assert.Equal(expectedVerse, songActual);
     }
 
 }
