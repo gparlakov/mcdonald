@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/mcdonald.consoleApp/mcdonald.consoleApp.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watchTests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "-p",
+                "${workspaceFolder}/mcdonald.sln",
+                "test",
+                "${workspaceFolder}/mcdonald.tests/mcdonald.tests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

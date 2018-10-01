@@ -24,3 +24,8 @@ This is a DotNetCore app and can be build with **Dot Net Core SDK 2.x**
  mcdonald.tests\mcdonald.tests.csproj
 * Tests for the core - `SingerTests` 
 * Tests for the UI - treating the app as a black box and testing the output as it depends on the input `ConsoleTests` 
+
+## Tooling
+ * VSCode can be used for editor 
+ * C# for vs code (omnisharp) helps in C# editing
+ * the watchTests can be used for test driven development
