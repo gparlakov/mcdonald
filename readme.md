@@ -18,3 +18,5 @@ This is a DotNetCore app and can be build with **Dot Net Core SDK 2.x**
 2. mcdonald.consoleApp\mcdonald.consoleApp.csproj - the UI - console app that uses the mcdonald.csproj
 ## Tests
  mcdonald.tests\mcdonald.tests.csproj
+* Tests for the core - `SingerTests` 
+* Tests for the UI - treating the app as a black box and testing the output as it depends on the input `ConsoleTests` 
