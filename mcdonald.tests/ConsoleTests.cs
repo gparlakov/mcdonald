@@ -78,13 +78,34 @@ public class ConsoleTests
     }
 
     [Fact]
-    public void TestName()
+    public void ShouldAcceptAnimalsAsParams()
     {
-    //Given
-    
-    //When
-    
-    //Then
+        // arrange
+        var arguments = new string[] {"cat", "meow", "elephant", "oink"};
+        var expectedVerse =  string.Join(Environment.NewLine, new string[] { 
+            "Old MACDONALD had a farm E-I-E-I-O",
+            "And on his farm he had a cat E-I-E-I-O",
+            "With a meow meow here",
+            "And a meow meow there",
+            "Here a meow, there a meow",
+            "Everywhere a meow meow",
+            "Old MacDonald had a farm E-I-E-I-O",
+            "",
+            "Old MACDONALD had a farm E-I-E-I-O",
+            "And on his farm he had a elephant E-I-E-I-O",
+            "With a oink oink here",
+            "And a oink oink there",
+            "Here a oink, there a oink",
+            "Everywhere a oink oink",
+            "Old MacDonald had a farm E-I-E-I-O",
+            "",
+            ""})
+            + Environment.NewLine;        
+        // act
+        mcdonald.consoleApp.Program.Main(arguments);
+        
+        // assert
+        Assert.Equal(expectedVerse, testWriter.Result());
     }
 }
 
