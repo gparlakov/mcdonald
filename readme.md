@@ -1,8 +1,12 @@
 # Mcdonald verse singer - Console app
 
-The console app can sing the McDonald child's verse. It has two modes:
+The console app can output the McDonald child's verse. It has two modes:
 
 1. Auto - just run the mcdonald.consoleApp.exe (from the dist.zip)
+```bash
+mcdonald.consoleApp.exe 
+# results in five verse cow, cat, dog...
+``` 
 2. Pass in animals as parameters
 ```bash
 mcdonald.consoleApp.exe cat meow pig oink
