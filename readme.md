@@ -19,6 +19,9 @@ mcdonald.consoleApp.exe cat meow pig oink
  * src.zip - the source code for the project
  * dist.zip - the distributable - compiled for windows x86 runtime and dotnet core runtime included
 
+# Source location
+https://github.com/gparlakov/mcdonald
+
 # Project description
 
 ## Structure
