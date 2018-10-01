@@ -14,6 +14,11 @@ mcdonald.consoleApp.exe cat meow pig oink
 # results in two verse cat-meow and pig-oink
 ``` 
 
+# Files in Google cloud shared folder
+ * readme.md - this documentation file
+ * src.zip - the source code for the project
+ * dist.zip - the distributable - compiled for windows x86 runtime and dotnet core runtime included
+
 # Project description
 
 ## Structure
